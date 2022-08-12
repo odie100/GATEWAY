@@ -1,2 +1,19 @@
-server.port=9999
-spring.application.name=GATEWAY
+server:
+  port: 9999
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+  main:
+    web-application-type: reactive
